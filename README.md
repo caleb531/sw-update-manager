@@ -8,7 +8,7 @@ your service worker and prompt the user to update with a notification.
 
 ## Usage
 
-## 1. Load the script into your application
+### 1. Load the script into your application
 
 First, you need to load the SW Update Manager script into the front-end portion
 of your application. You can do this via `<script>` tag or through your build
@@ -26,7 +26,7 @@ require('sw-update-manager');
 import swUpdateManager from 'sw-update-manager';
 ```
 
-## 2. Add front-end JS
+### 2. Add front-end JS
 
 In your front-end JavaScript, you will need to initialize a new `UpdateManager`
 instance and ensure it is accessible by the code that spawns the update
@@ -65,7 +65,7 @@ All of these code examples are using jQuery to keep the syntax simple and focus
 on the API. However, you could effortlessly use any of these features with
 React/JSX or another library.
 
-## 3. Listen for update requests from your service worker
+### 3. Listen for update requests from your service worker
 
 The final step in configuring SW Update Manager.
 
