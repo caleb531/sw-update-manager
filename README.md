@@ -108,7 +108,7 @@ this.updateManager.reloadOnUpdate = false;
 ```
 
 You can also run your own code before the update by listening for the `update`
-event:
+event.
 
 ```js
 // The page will still reload automatically after this callback fires, unless
@@ -117,3 +117,8 @@ this.updateManager.on('update', () => {
   localStorage.setItem('lastUpdateTime', Date.now());
 });
 ```
+
+The `update` event fires only when the service worker is actually able to be
+updated. Calling the `update()` method a second time will not fire the event
+callbacks again, nor will the callbacks fire at all if the service worker is
+missing the aforementioned listener code.
