@@ -53,7 +53,7 @@ Then, you can call the `update()` method on your `UpdateManager` object.
 // bind a click event to the update notification you show to the user (a long as
 // you instruct the user to click the notification to update)
 $('.update-notification').on('click', () => {
-	this.updateManager.update();
+  this.updateManager.update();
 });
 ```
 
