@@ -2,7 +2,7 @@
 
 // Register a service worker that is implicitly set to precache all app assets,
 // and provide a mechanism for detecting updates to the service worker
-class ServiceWorkerUpdateManager {
+class SWUpdateManager {
 
   constructor(serviceWorker) {
     // User callbacks
@@ -97,9 +97,9 @@ class ServiceWorkerUpdateManager {
 }
 
 if (typeof module !== 'undefined') {
-	module['exports'] = ServiceWorkerUpdateManager;
+	module['exports'] = SWUpdateManager;
 } else {
-	window.ServiceWorkerUpdateManager = ServiceWorkerUpdateManager;
+	window.SWUpdateManager = SWUpdateManager;
 }
 
 }());

@@ -1,11 +1,10 @@
-# Service Worker Update Manager
+# SW Update Manager
 
 *Copyright 2018 Caleb Evans*  
 *Released under the MIT license*  
 
-Service Worker Update Manager is a front-end package that allows you to detect
-updates to your service worker and prompt the user to update with a
-notification.
+SW Update Manager is a front-end package that allows you to detect updates to
+your service worker and prompt the user to update with a notification.
 
 **Please note that this project is still in active development, meaning the API
 is still in flux.**
@@ -14,32 +13,32 @@ is still in flux.**
 
 ### 1. Load the script into your application
 
-First, you need to load the Service Worker Update Manager script into the
-front-end portion of your application. You can do this via `<script>` tag or
-through your build process.
+First, you need to load the SW Update Manager script into the front-end portion
+of your application. You can do this via `<script>` tag or through your build
+process.
 
 ```html
 <script src="scripts/sw-update-manager.js"></script>
 ```
 
 ```js
-var ServiceWorkerUpdateManager = require('sw-update-manager');
+var SWUpdateManager = require('sw-update-manager');
 ```
 
 ```js
-import ServiceWorkerUpdateManager from 'sw-update-manager';
+import SWUpdateManager from 'sw-update-manager';
 ```
 
 ### 2. Add front-end JS
 
-In your front-end JavaScript, you will need to initialize a new `UpdateManager`
-instance and ensure it is accessible by the code that spawns the update
-notification.
+In your front-end JavaScript, you will need to initialize a new
+`SWUpdateManager` instance and ensure it is accessible by the code that spawns
+the update notification.
 
 ```js
 if (navigator.serviceWorker) {
   let serviceWorker = navigator.serviceWorker.register('service-worker.js');
-  this.updateManager = new ServiceWorkerUpdateManager(serviceWorker);
+  this.updateManager = new SWUpdateManager(serviceWorker);
   // Use the optional updateAvailable hook to re-render the UI (or run any other
   // necessary code) when an update is available
   this.updateManager.on('updateAvailable', () => this.renderView());
@@ -72,7 +71,7 @@ React/JSX or another library.
 
 ### 3. Listen for update requests to your service worker
 
-The final step in configuring Update Manager is to listen for events from the
+The final step in configuring SW Update Manager is to listen for events from the
 service worker itself.
 
 ```
