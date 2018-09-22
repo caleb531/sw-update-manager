@@ -6,6 +6,9 @@
 SW Update Manager is a front-end package that allows you to detect updates to
 your service worker and prompt the user to update with a notification.
 
+**Please note that this project is still in active development, meaning the API
+*is still in flux.**
+
 ## Usage
 
 ### 1. Load the script into your application
