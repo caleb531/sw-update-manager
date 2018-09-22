@@ -1,3 +1,10 @@
+// SW Update Manager
+// Copyright 2018 Caleb Evans
+// Released under the MIT license
+
+// The code and logic in this package is based on the advanced Workbox recipe,
+// "Offer a page reload for users":
+// <https://developers.google.com/web/tools/workbox/guides/advanced-recipes#offer_a_page_reload_for_users>
 ;(function () {
 
 // Register a service worker that is implicitly set to precache all app assets,
