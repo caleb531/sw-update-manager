@@ -44,7 +44,7 @@ class SWUpdateManager {
     let preventDevToolsReloadLoop;
     navigator.serviceWorker.addEventListener('controllerchange', () => {
       // Ensure refresh is only called once.
-      // This works around a bug in "force update on reload".
+      // This works around a bug in the "Update on reload" DevTools option.
       if (preventDevToolsReloadLoop) {
         return;
       }
