@@ -45,7 +45,7 @@ if (navigator.serviceWorker) {
 }
 ```
 
-You can use the `isUpdateAvailable` property on your `UpdateManager` object to
+You can use the `isUpdateAvailable` property on your `SWUpdateManager` object to
 decide when to display the update notification.
 
 ```js
@@ -55,7 +55,7 @@ if (this.updateManager.isUpdateAvailable) {
 ```
 
 Whenever you decide to trigger the service worker update, call the `update()`
-method on your `UpdateManager` object.
+method on your `SWUpdateManager` object.
 
 ```js
 // You can call `update()` however you want, but for a simple user experience,
