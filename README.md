@@ -42,6 +42,9 @@ if (navigator.serviceWorker) {
   // Use the optional updateAvailable hook to re-render the UI (or run any other
   // necessary code) when an update is available
   this.updateManager.on('updateAvailable', () => this.renderView());
+  // You must explicitly tell SW Update Manager when to check for updates to the
+  // service worker
+  this.updateManager.checkForUpdates();
 }
 ```
 

@@ -19,13 +19,17 @@ class SWUpdateManager {
     };
 
     // Internal state
+    this.serviceWorker = serviceWorker;
     this.isUpdateAvailable = false;
     this.reloadOnUpdate = reloadOnUpdate;
 
     if (!serviceWorker) {
       throw new Error('SW Update Manager: Service worker required');
     }
-    serviceWorker.then((registration) => {
+  }
+
+  checkForUpdates() {
+    this.serviceWorker.then((registration) => {
       this.registration = registration;
       this.onRegisterServiceWorker();
       return registration;
