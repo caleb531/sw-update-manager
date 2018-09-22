@@ -72,7 +72,8 @@ React/JSX or another library.
 
 ### 3. Listen for update requests from your service worker
 
-The final step in configuring Service Worker Update Manager.
+The final step in configuring Update Manager is to listen for events from the
+service worker itself.
 
 ```
 // When an update to the service worker is detected, the front end will request
