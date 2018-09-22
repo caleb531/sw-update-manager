@@ -61,9 +61,7 @@ class SWUpdateManager {
 
     this.onNewServiceWorker(() => {
       this.isUpdateAvailable = true;
-      this.events.updateAvailable.forEach((eventCallback) => {
-        eventCallback();
-      });
+      this.events.updateAvailable.forEach((callback) => callback());
     });
   }
 
