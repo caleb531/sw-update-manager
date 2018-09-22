@@ -2,23 +2,27 @@
 
 // Register a service worker that is implicitly set to precache all app assets,
 // and provide a mechanism for detecting updates to the service worker
-class UpdateManager {
+class ServiceWorkerUpdateManager {
 
-  constructor({workerURL = 'service-worker.js', workerOptions = null, updateAvailable = null} = {}) {
+  constructor(serviceWorker) {
     // User callbacks
-    this.events = {updateAvailable};
+    this.events = {updateAvailable: []};
 
     // Internal state
     this.isUpdateAvailable = false;
 
-    if (!navigator.serviceWorker) {
-      return;
+    if (!serviceWorker) {
+      throw new Error('SW Update Manager: Service worker required');
     }
-    let worker = navigator.serviceWorker.register(workerURL, workerOptions);
-    worker.then((registration) => {
+    serviceWorker.then((registration) => {
       this.registration = registration;
       this.onRegisterServiceWorker();
+      return registration;
     });
+  }
+
+  on(eventName, eventCallback) {
+    this.events[eventName].push(eventCallback);
   }
 
   onRegisterServiceWorker() {
@@ -43,9 +47,9 @@ class UpdateManager {
 
     this.onNewServiceWorker(() => {
       this.isUpdateAvailable = true;
-      if (this.events.updateAvailable) {
-        this.events.updateAvailable();
-      }
+      this.events.updateAvailable.forEach((eventCallback) => {
+        eventCallback();
+      });
     });
   }
 
@@ -59,7 +63,7 @@ class UpdateManager {
       return;
     }
     this.registration.waiting.postMessage({
-      swUpdateManagerEvent: 'update'
+      updateManagerEvent: 'update'
     });
   }
 
@@ -93,9 +97,9 @@ class UpdateManager {
 }
 
 if (typeof module !== 'undefined') {
-	module['exports'] = UpdateManager;
+	module['exports'] = ServiceWorkerUpdateManager;
 } else {
-	window.UpdateManager = UpdateManager;
+	window.ServiceWorkerUpdateManager = ServiceWorkerUpdateManager;
 }
 
 }());
