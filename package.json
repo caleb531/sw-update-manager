@@ -1,6 +1,6 @@
 {
   "name": "sw-update-manager",
-  "version": "0.3.0",
+  "version": "0.4.0",
   "description": "A front-end package that allows you to detect updates to your service worker and prompt the user to update with a notification.",
   "main": "sw-update-manager.js",
   "scripts": {
