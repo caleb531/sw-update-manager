@@ -11,12 +11,16 @@
 // and provide a mechanism for detecting updates to the service worker
 class SWUpdateManager {
 
-  constructor(serviceWorker) {
+  constructor(serviceWorker, {reloadOnUpdate = true} = {}) {
     // User callbacks
-    this.events = {updateAvailable: []};
+    this.events = {
+      updateAvailable: [],
+      update: []
+    };
 
     // Internal state
     this.isUpdateAvailable = false;
+    this.reloadOnUpdate = reloadOnUpdate;
 
     if (!serviceWorker) {
       throw new Error('SW Update Manager: Service worker required');
@@ -49,7 +53,10 @@ class SWUpdateManager {
         return;
       }
       preventDevToolsReloadLoop = true;
-      window.location.reload();
+      this.events.update.forEach((callback) => callback());
+      if (this.reloadOnUpdate) {
+        window.location.reload();
+      }
     });
 
     this.onNewServiceWorker(() => {
