@@ -54,7 +54,8 @@ if (this.updateManager.isUpdateAvailable) {
 } 
 ```
 
-Then, you can call the `update()` method on your `UpdateManager` object.
+Whenever you decide to trigger the service worker update, call the `update()`
+method on your `UpdateManager` object.
 
 ```js
 // You can call `update()` however you want, but for a simple user experience,
