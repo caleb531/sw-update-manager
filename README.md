@@ -42,7 +42,7 @@ if (navigator.serviceWorker) {
   this.updateManager = new ServiceWorkerUpdateManager(serviceWorker);
   // Use the optional updateAvailable hook to re-render the UI (or run any other
   // necessary code) when an update is available
-  this.updateManager.on('updateAvailable', () => this.renderTheAppAgain());
+  this.updateManager.on('updateAvailable', () => this.renderView());
 }
 ```
 
