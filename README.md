@@ -23,7 +23,7 @@ through your build process.
 ```
 
 ```js
-require('sw-update-manager');
+var ServiceWorkerUpdateManager = require('sw-update-manager');
 ```
 
 ```js
