@@ -9,7 +9,7 @@ your service worker and prompt the user to update with a notification.
 **Please note that this project is still in active development, meaning the API
 is still in flux.**
 
-## Usage
+## Getting Started
 
 ### 1. Load the script into your application
 
@@ -85,5 +85,35 @@ self.addEventListener('message', (event) => {
   if (event.data.updateManagerEvent === 'update') {
     self.skipWaiting();
   }
+});
+```
+
+## Other API features
+
+### Controlling update behavior
+
+If you'd like to stop SW Update Manager from reloading the page automatically
+when calling `update()`, set `reloadOnUpdate` to `false`. You can do this on
+initialization on the update manager, or afterwards.
+
+```js
+this.updateManager = new SWUpdateManager(serviceWorker, {
+  reloadOnUpdate: false
+});
+```
+
+```js
+this.updateManager = new SWUpdateManager(serviceWorker);
+this.updateManager.reloadOnUpdate = false;
+```
+
+You can also run your own code before the update by listening for the `update`
+event:
+
+```js
+// The page will still reload automatically after this callback fires, unless
+// you set reloadOnUpdate to false as described above
+this.updateManager.on('update', () => {
+  localStorage.setItem('lastUpdateTime', Date.now());
 });
 ```
