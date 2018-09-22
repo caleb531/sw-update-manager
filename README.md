@@ -70,7 +70,7 @@ All of these code examples are using jQuery to keep the syntax simple and focus
 on the API. However, you could effortlessly use any of these features with
 React/JSX or another library.
 
-### 3. Listen for update requests from your service worker
+### 3. Listen for update requests to your service worker
 
 The final step in configuring Update Manager is to listen for events from the
 service worker itself.
