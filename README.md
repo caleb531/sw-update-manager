@@ -18,7 +18,7 @@ of your application. You can do this via `<script>` tag or through your build
 process.
 
 ```html
-<script src="scripts/sw-update-manager.js"></script>
+<script src="node_modules/sw-update-manager/sw-update-manager.js"></script>
 ```
 
 ```js
