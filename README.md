@@ -45,6 +45,15 @@ if (navigator.serviceWorker) {
 }
 ```
 
+You can use the `isUpdateAvailable` property on your `UpdateManager` object to
+decide when to display the update notification.
+
+```js
+if (this.updateManager.isUpdateAvailable) {
+  $('.update-notification').addClass('visible');
+} 
+```
+
 Then, you can call the `update()` method on your `UpdateManager` object.
 
 ```js
@@ -54,15 +63,6 @@ Then, you can call the `update()` method on your `UpdateManager` object.
 $('.update-notification').on('click', () => {
   this.updateManager.update();
 });
-```
-
-You can use the `isUpdateAvailable` property on your `UpdateManager` object to
-decide when to display the update notification.
-
-```js
-if (this.updateManager.isUpdateAvailable) {
-  $('.update-notification').addClass('visible');
-} 
 ```
 
 All of these code examples are using jQuery to keep the syntax simple and focus
