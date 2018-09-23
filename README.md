@@ -106,8 +106,8 @@ this.updateManager = new SWUpdateManager(serviceWorker);
 this.updateManager.reloadOnUpdate = false;
 ```
 
-You can also run your own code before the update by listening for the `update`
-event.
+You can also run your own code before the actual update takes place by listening
+for the `update` event.
 
 ```js
 // The page will still reload automatically after this callback fires, unless
