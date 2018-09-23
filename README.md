@@ -120,3 +120,11 @@ The `update` event fires only when the service worker is actually able to be
 updated. Calling the `update()` method a second time will not fire the event
 callbacks again, nor will the callbacks fire at all if the service worker is
 missing the aforementioned listener code.
+
+## Apps using SW Update Manager
+
+- https://github.com/caleb531/flip-book
+  - `app/assets/index.html`
+  - `app/scripts/components/app.js`
+  - `app/scripts/components/update-notification.js`
+  - `app/scripts/service-worker.js`
