@@ -74,7 +74,7 @@ another library or in vanilla JavaScript.
 The final step in configuring SW Update Manager is to listen for events from the
 service worker itself.
 
-```
+```js
 // When an update to the service worker is detected, the front end will request
 // that the service worker be updated immediately; listen for that request here
 self.addEventListener('message', (event) => {
