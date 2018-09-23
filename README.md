@@ -51,27 +51,23 @@ if (navigator.serviceWorker) {
 You can use the `isUpdateAvailable` property on your `SWUpdateManager` object to
 decide when to display the update notification.
 
-```js
-if (this.updateManager.isUpdateAvailable) {
-  $('.update-notification').addClass('visible');
-} 
+```jsx
+<div className={`update-notification ${this.updateManager.isUpdateAvailable ? 'visible': 'hidden'}`}></div>
 ```
 
 Whenever you decide to trigger the service worker update, call the `update()`
-method on your `SWUpdateManager` object.
+method on your `SWUpdateManager` object. You can call `update()` however you
+want, but for a simple user experience, bind a click event to the update
+notification you show to the user (a long as you instruct the user to click the
+notification to update).
 
-```js
-// You can call `update()` however you want, but for a simple user experience,
-// bind a click event to the update notification you show to the user (a long as
-// you instruct the user to click the notification to update)
-$('.update-notification').on('click', () => {
-  this.updateManager.update();
-});
+```jsx
+<div className='update-notification' onclick={() => this.updateManager.update()}></div>
 ```
 
-All of these code examples are using jQuery to keep the syntax simple and focus
-on the API. However, you could effortlessly use any of these features with
-React/JSX or another library.
+All of these code examples are using React/JSX because the syntax is familiar to
+many developers. However, you could effortlessly use any of these features with
+another library or in vanilla JavaScript.
 
 ### 3. Listen for update requests to your service worker
 
