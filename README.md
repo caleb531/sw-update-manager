@@ -128,3 +128,13 @@ missing the aforementioned listener code.
   - `app/scripts/components/app.js`
   - `app/scripts/components/update-notification.js`
   - `app/scripts/service-worker.js`
+- https://github.com/caleb531/connect-four
+  - `app/assets/index.html`
+  - `app/scripts/components/app.js`
+  - `app/scripts/components/update-notification.js`
+  - `app/scripts/service-worker.js`
+- https://github.com/caleb531/workday-time-calculator
+  - `app/assets/index.html`
+  - `app/scripts/app.js`
+  - `app/scripts/update-notification.js`
+  - `app/scripts/service-worker.js`
