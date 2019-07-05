@@ -61,7 +61,7 @@ notification you show to the user (a long as you instruct the user to click the
 notification to update).
 
 ```jsx
-<div className='update-notification' onclick={() => this.updateManager.update()}></div>
+<div className='update-notification' onClick={() => this.updateManager.update()}></div>
 ```
 
 All of these code examples are using React/JSX because the syntax is familiar to
