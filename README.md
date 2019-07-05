@@ -92,7 +92,7 @@ self.addEventListener('message', (event) => {
 
 If you'd like to stop SW Update Manager from reloading the page automatically
 when calling `update()`, set `reloadOnUpdate` to `false`. You can do this on
-initialization on the update manager, or afterwards.
+initialization of the update manager, or anytime afterwards.
 
 ```js
 this.updateManager = new SWUpdateManager(serviceWorker, {
