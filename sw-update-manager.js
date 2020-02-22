@@ -29,7 +29,7 @@ class SWUpdateManager {
   }
 
   checkForUpdates() {
-    this.serviceWorker.then((registration) => {
+    return this.serviceWorker.then((registration) => {
       this.registration = registration;
       this.onRegisterServiceWorker();
       return registration;
